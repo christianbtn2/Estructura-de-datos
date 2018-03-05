@@ -1,0 +1,57 @@
+﻿
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Contenido del Arbol</h2>
+@Html.TextAreaFor(m => TempData["Arbol"])
+
+<h4></h4>
+<h4></h4>
+<br />
+
+@using (Html.BeginForm("Eliminar_Nodo", "Arbol"))
+{
+    <label>Ingrese el nombre del pais que desea eliminar...</label>
+    <br />
+    @Html.TextBox("TBNombreEliminar")
+    <br />
+    <label>Ingrese grupo del pais...</label>
+    <br />
+    @Html.TextBox("TBGrupoEliminar")
+    <input type="submit" value="Eliminar" />
+
+
+
+
+}
+
+<br />
+@using (Html.BeginForm("Insertar_Nodo", "Arbol"))
+{
+    <label>Ingrese nombre del paies que desea ingresar...</label>
+    <br />
+    @Html.TextBox("TBNombrePais")
+    <br />
+    <label>Ingrese grupo del pais...</label>
+    <br />
+    @Html.TextBox("TBGrupoPais")
+    <input type="submit" value="Ingresar" />
+}
+<br />
+<br />
+
+@using (Html.BeginForm("Orden", "Arbol"))
+{
+    <input type="submit" value="Orden" />
+    <br />
+    @Html.TextAreaFor(m => TempData["Orden"])
+}
+
+@using (Html.BeginForm("PreOrden", "Arbol"))
+{
+    <input type="submit" value="Pre Orden" />
+    <br />
+    @Html.TextAreaFor(m => TempData["PreOrden"])
+}

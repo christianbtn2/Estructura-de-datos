@@ -1,0 +1,36 @@
+﻿
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Contenido del Arbol</h2>
+@Html.TextAreaFor(m => TempData["Arbol"])
+
+<h4></h4>
+<h4></h4>
+<br />
+
+@using (Html.BeginForm("Eliminar_Nodo", "ArbolCadena"))
+{
+    <label>Ingrese el nombre del nodo que desea eliminar...</label>
+    <br />
+    @Html.TextBox("TBEliminar")
+    <br />
+    <input type="submit" value="Eliminar" />
+
+
+
+
+}
+
+<br />
+@using (Html.BeginForm("Insertar_Nodo", "ArbolCadena"))
+{
+    <label>Ingrese nombre del nodo que desea ingresar...</label>
+    <br />
+    @Html.TextBox("TBInsertar")
+    <br />
+    <input type="submit" value="Ingresar" />
+}
